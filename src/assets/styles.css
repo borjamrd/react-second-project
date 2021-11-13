@@ -1,0 +1,23 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    background-color: antiquewhite;
+}
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    background-color: beige;
+}
+.nav-bar-elements{
+    display: flex;
+    height: 40px;
+    width: 100px;
+    padding: 2% 5%;
+    background-color: burlywood;
+    margin: 2%;
+    border: solid black 1px;
+}
