@@ -18,6 +18,36 @@
     width: 100px;
     padding: 2% 5%;
     background-color: burlywood;
-    margin: 2%;
+    margin: 5%;
     border: solid black 1px;
+}
+.user-section{
+    display:flex;
+    padding: 5%;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 60px;
+    background-color: cadetblue;
+}
+.user-box{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    background-color: blanchedalmond;
+}
+.section-offer{
+    display: grid;
+    padding: 5%;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: cornsilk;
+    gap: 5%;
+}
+.offer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5%;
+    width: 300px;
+    height: 250px;
+    background-color: darkgray;
 }

@@ -62,8 +62,8 @@ class User extends React.Component{
     this.setState({user: undefined});
   }
   render() {
-    return <div>{this.state.user !== undefined
-                ?<div>
+    return <div className="user-section">{this.state.user !== undefined
+                ?<div className="user-box">
                     <div><img src={this.state.user.image}/></div>
                     <div>Hola {this.state.user.username}, <span  onClick={this.logout}>Logout</span></div>
                   </div>
@@ -73,8 +73,19 @@ class User extends React.Component{
 }
 
 class SectionOffer extends React.Component{
+  constructor(props){
+    super(props);
+
+    this.state= {title: this.props.offer.title, description: this.props.offer.description, image: this.props.offer.image, quantity: this.props.offer.quantity, price: this.props.offer.price};
+
+    this.acquireOffer = this.acquireOffer.bind(this);
+  }
+  acquireOffer(){
+    this.setState((state, props)=> ({quantity: state.quantity -1}));
+  }
+
   render(){
-    let showOffer = this.props.offers.map((offer)=> <div><h3>{offer.title}</h3><p>{offer.description}</p><p>{offer.quantity}</p><p>{offer.price}</p></div>);
+    let showOffer = this.props.offers.map((offer)=> <div className="offer"><h3>{offer.title}</h3><p>{offer.description}</p><p>Cantidad: {offer.quantity}</p><p>Precio: {offer.price}</p><input value="Adquirir" onClick={this.acquireOffer}>Adquirir</input></div>);
 
     return <div className="section-offer">
       {showOffer}
